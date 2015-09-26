@@ -1,0 +1,68 @@
+<template name="information">
+  <div class="search-and-information">
+    <div class="search-field">
+      <form id="consigSearch">
+        <input type="text" class="form-control" id="consigKey" value="{{package._id}}" placeholder="Consignment Key">
+      </form>
+    </div>
+
+    {{#with package}}
+      {{> informationField}}
+      {{> chat}}
+    {{/with}}
+
+  </div>
+</template>
+
+<template name="informationField">
+  <div class="information-field">
+    <div class="row">
+      <div class="col-md-6">
+        From <br>
+        {{originDepotName}}, {{originCountry}}
+      </div>
+      <div class="col-md-6">
+        To <br>
+        {{deliveryTown}}, {{destinationCountry}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        Arrival Due Date<br>
+        {{exactMoment deliveryDueDate}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        Current Location<br>
+        Hongkong, Hongkong
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="chat">
+  <div class="chat-field">
+    {{#each package.getMessages}}
+    <div class="row">
+      <div class="col-md-12">
+        {{msg}}
+      </div>
+    </div>
+    {{else}}
+    <div class="row">
+      <div class="col-md-12">
+        No messages yet
+      </div>
+    </div>
+    {{/each}}
+
+    <div class="row">
+      <div class="col-md-12">
+        <form id="chatMessage">
+          <input type="text" class="form-control" id="message" placeholder="Write a chat message">
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
