@@ -18,16 +18,16 @@ Template.application.onRendered(function() {
   },50);
 });
 
-Meteor.startup(function(){
-  if (PackageGnome.Packages.find().count() === 0) {
-    let packages = EJSON.parse('packages-mocks.json');
-    packages = _.toArray(packages);
-    packages.forEach(p => {PackageGnome.Packages.add(p);});
-  }
-
-  if (PackageGnome.Stations.find().count() === 0) {
-    let packages = EJSON.parse('stations-mocks.json');
-    stations = _.toArray(stations);
-    stations.forEach(s => {PackageGnome.Stations.add(s);});
-  }
-});
+// Meteor.startup(function(){
+//   if (PackageGnome.Packages.find().count() === 0) {
+//     let packages = EJSON.parse('packages-mocks.json');
+//     packages = _.toArray(packages);
+//     packages.forEach(p => {PackageGnome.Packages.add(p);});
+//   }
+//
+//   if (PackageGnome.Stations.find().count() === 0) {
+//     let packages = EJSON.parse('stations-mocks.json');
+//     stations = _.toArray(stations);
+//     stations.forEach(s => {PackageGnome.Stations.add(s);});
+//   }
+// });

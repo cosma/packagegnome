@@ -66,7 +66,7 @@ Template.map.initialisePackageJourney = function(){
     });
 
     // Initialize a polyline with the strip:
-    var polyline = new H.map.Polyline(strip, { style: { lineWidth: 10 }});
+    var polyline = new H.map.Polyline(strip, { style: { lineWidth: 10,strokeColor:"#ff6600" }});
 
     // Add the polyline to the map:
     PackageGnome.map.addObject(polyline);
