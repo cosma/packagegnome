@@ -28,12 +28,18 @@ Template.map.onRendered(function(){
 
 });
 
+
 Template.map.initialisePackageJourney = function(){
+    let logIt = function(evt){
+      console.log("Hey");
+    };
+
     let iconOrigin = new H.map.Icon(PackageGnome.Package.imageUrlOriginTODO || 'http://googlemaps.googlermania.com/google_maps_api_v3/en/Google_Maps_Marker.png');
     let iconDestination = new H.map.Icon(PackageGnome.Package.imageUrlDestinationTODO || 'http://googlemaps.googlermania.com/google_maps_api_v3/en/Google_Maps_Marker.png');
     // Create a marker using the previously instantiated icon:
-    let origin = new H.map.Marker(PackageGnome.Package.originLocation, { icon: iconOrigin });
-    let destination = new H.map.Marker(PackageGnome.Package.destinationLocation, { icon: iconDestination });
+    let origin = new H.map.Marker(PackageGnome.Package.originLocation);
+    let destination = new H.map.Marker(PackageGnome.Package.destinationLocation);
+    origin.addEventListener('tap',logIt);
 
     // Add the marker to the map:
     PackageGnome.map.addObject(origin);
@@ -52,6 +58,8 @@ Template.map.initialisePackageJourney = function(){
       points.push(s.location);
       let iconStation = new H.map.Icon(s.imageUrl || 'http://i.imgur.com/RNiWxnS.png');
       let marker = new H.map.Marker(s.location, { icon: iconStation });
+
+      marker.addEventListener('tap',logIt);
       PackageGnome.map.addObject(marker);
 
     });

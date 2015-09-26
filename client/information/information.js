@@ -29,9 +29,8 @@ Template.chat.events({
 
 Template.addToAccount.helpers({
   canAddPackage:function(){
-    return PackageGnome.Package &&
-    Meteor.user() &&
-    (Meteor.user().profile.packages.indexOf(PackageGnome.Package) < 0);
+    return Meteor.user() &&
+    (Meteor.user().profile.packages.indexOf(Session.get('activePackage')) < 0);
   }
 });
 Template.addToAccount.events({

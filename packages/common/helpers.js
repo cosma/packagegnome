@@ -3,7 +3,7 @@ Template.registerHelper("exactMoment", function(date){
 });
 
 Template.registerHelper("roughMoment", function(date){
-  return moment().from(new Date(date));
+  return moment().fromNow(new Date(date));
 });
 
 Template.registerHelper("package", function(){
