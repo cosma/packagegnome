@@ -11,10 +11,14 @@ Template.application.onRendered(function() {
   var script3 = document.createElement('script');
   script3.type = 'text/javascript';
   script3.src = "/mapjs-ui.js";
+  var script4 = document.createElement('script');
+  script4.type = 'text/javascript';
+  script4.src = "/mapjs-events.js";
 
   Meteor.setTimeout(function() {
     document.head.appendChild(script2);
     document.head.appendChild(script3);
+    document.head.appendChild(script4);
   },50);
 });
 
