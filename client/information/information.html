@@ -13,6 +13,7 @@
     {{#with package}}
       {{> informationField}}
       {{> chat}}
+      {{> addToAccount}}
     {{/with}}
 
   </div>
@@ -48,7 +49,7 @@
       <div class="col-md-12">
         <div class="content">
           <span class="information-field-headline">Current Location</span><br>
-          <span class="information-field-info">HongKong, HongKong</span>
+          <span class="information-field-info">{{lastStation}}</span>
         </div>
       </div>
     </div>
@@ -83,6 +84,20 @@
         </div>
       </div>
       {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="addToAccount">
+  <div class="add-to-account">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="content">
+          {{#if canAddPackage}}
+            <button class="btn btn-success btn-block" id="addToAccount">Add to my account</button>
+          {{/if}}
+        </div>
+      </div>
     </div>
   </div>
 </template>

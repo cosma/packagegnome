@@ -50,7 +50,7 @@ Template.map.initialisePackageJourney = function(){
 
     stations.forEach(s => {
       points.push(s.location);
-      let iconStation = new H.map.Icon(s.imageUrl || 'http://maps.google.com/mapfiles/marker_purple.png');
+      let iconStation = new H.map.Icon(s.imageUrl || 'http://i.imgur.com/RNiWxnS.png');
       let marker = new H.map.Marker(s.location, { icon: iconStation });
       PackageGnome.map.addObject(marker);
 

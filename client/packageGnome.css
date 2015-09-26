@@ -19,7 +19,6 @@
   width: 100px;
   height: 50px;
   z-index:100;
-  right:10px;
   margin-top:2%;
 }
 
@@ -92,4 +91,13 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
 .chat-field .date {
   font-size: 0.8em;
   color:grey;
+}
+
+.add-to-account {
+  width:100%;
+  margin-left:2%;
+  margin-top:25px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
 }

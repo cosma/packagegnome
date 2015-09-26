@@ -1,5 +1,5 @@
 <template name="account">
-  <div class="log-in">
-    {{> loginButtons}}
+  <div class="log-in" style="{{#if currentUser}}right:120px;{{else}}right:10px{{/if}}">
+    {{> loginButtons align="right"}}
   </div>
 </template>
