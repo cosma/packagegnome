@@ -1,9 +1,13 @@
 <template name="information">
   <div class="search-and-information">
     <div class="search-field">
-      <form id="consigSearch">
-        <input type="text" class="form-control" id="consigKey" value="{{package._id}}" placeholder="Consignment Key">
-      </form>
+      <div class="row">
+        <div class="col-md-12">
+          <form id="consigSearch">
+            <input type="text" class="form-control" id="consigKey" value="{{package._id}}" placeholder="Your tracking ID">
+          </form>
+        </div>
+      </div>
     </div>
 
     {{#with package}}
@@ -17,25 +21,35 @@
 <template name="informationField">
   <div class="information-field">
     <div class="row">
-      <div class="col-md-6">
-        From <br>
-        {{originDepotName}}, {{originCountry}}
-      </div>
-      <div class="col-md-6">
-        To <br>
-        {{deliveryTown}}, {{destinationCountry}}
+      <div class="col-md-12">
+        <div class="content">
+          <span class="information-field-headline">From</span> <br>
+          <span class="information-field-info">{{originDepotName}}, {{originCountry}}</span>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        Arrival Due Date<br>
-        {{exactMoment deliveryDueDate}}
+        <div class="content">
+          <span class="information-field-headline">To</span> <br>
+          <span class="information-field-info">{{deliveryTown}}, {{destinationCountry}}</span>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        Current Location<br>
-        Hongkong, Hongkong
+        <div class="content">
+          <span class="information-field-headline">Arrival Due Date</span><br>
+          <span class="information-field-info">{{exactMoment deliveryDueDate}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="content">
+          <span class="information-field-headline">Current Location</span><br>
+          <span class="information-field-info">HongKong, HongKong</span>
+        </div>
       </div>
     </div>
   </div>
@@ -43,26 +57,32 @@
 
 <template name="chat">
   <div class="chat-field">
-    {{#each package.getMessages}}
-    <div class="row">
-      <div class="col-md-12">
-        {{msg}}
-      </div>
-    </div>
-    {{else}}
-    <div class="row">
-      <div class="col-md-12">
-        No messages yet
-      </div>
-    </div>
-    {{/each}}
 
     <div class="row">
       <div class="col-md-12">
         <form id="chatMessage">
-          <input type="text" class="form-control" id="message" placeholder="Write a chat message">
+          <input type="text" class="form-control" id="message" placeholder="Leave a comment">
         </form>
       </div>
+    </div>
+
+    <div class="chat-field-messages">
+      {{#each package.getMessages}}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="content">
+            <span class="date pull-right">{{roughMoment created}}</span><br>
+            <span class="message">{{msg}}</span>
+          </div>
+        </div>
+      </div>
+      {{else}}
+      <div class="row">
+        <div class="col-md-12">
+          No messages yet
+        </div>
+      </div>
+      {{/each}}
     </div>
   </div>
 </template>

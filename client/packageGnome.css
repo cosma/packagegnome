@@ -7,25 +7,80 @@
 
 .search-and-information {
   position:absolute;
-  width: 15%;
+  width: 20%;
   height: 5%;
   z-index:100;
   margin-left:2%;
   margin-top:2%;
 }
 
+.search-field {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+}
+
+.search-field .col-md-12 {
+  padding-right: 0px;
+}
+
+.search-field input {
+  height:50px;
+}
+
 .information-field {
   width:100%;
-  height: 250px;
+  height: 220px;
   margin-left:2%;
   margin-top:10px;
-  background-color: white;
+  background-color: #D6E0EB;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+}
+
+.information-field .content {
+  padding:5px;
+  border-bottom:1px solid grey;
+}
+
+.information-field-headline {
+  width:100%;
+  font-size: 1.2em;
+  font-weight: bold;
+  color:black;
+}
+
+.information-field-info {
+  width:100%;
+  font-size: 1em;
+  color:grey;
 }
 
 .chat-field {
   width:100%;
-  height: 500px;
+  height: 40vh;
   margin-left:2%;
   margin-top:10px;
-  background-color: white;
+  background-color: #D6E0EB;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+}
+
+.chat-field .content {
+  word-wrap: break-word;
+  padding:5px;
+  border-bottom:1px solid grey;
+}
+
+.chat-field-messages {
+  height:91%;
+  overflow-y:scroll;
+  overflow-x: hidden;
+}
+
+.chat-field .date {
+  font-size: 0.8em;
+  color:grey;
 }

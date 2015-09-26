@@ -1,0 +1,71 @@
+{
+  "shipment1": {
+    "tracker.output": {
+        "consignment": [{
+            "consignmentKey": "WW100100100VLC20150717220810",
+            "consignmentNumber": "100100100",
+            "imageUrlOrigin":"http://i.imgur.com/OhbCQ0q.jpg",
+            "imageUrlDestination":"http://i.imgur.com/OhbCQ0q.jpg",
+            "customerReference": "",
+            "summaryCode": "DEL",
+            "collectionDate": "17 Jul 2015",
+            "deliveryDueDate": "21 Jul 2015 23:59:00",
+            "signatory": "juan marco",
+            "deliveryTown": "Berlin",
+            "destinationCountry": "Germany",
+            "originCountry": "Australia",
+            "originDepotCode": "MEL",
+            "originDepotName": "Melbourne",
+            "pieceQuantity": "1",
+            "statusData": []
+        }],
+        "duplicateConsignments": false
+    }
+  },
+  "shipment2": {
+    "tracker.output": {
+        "consignment": [{
+            "consignmentKey": "WW100100100VLC20150717220811",
+            "consignmentNumber": "100100100",
+            "imageUrlOrigin":"http://i.imgur.com/OhbCQ0q.jpg",
+            "imageUrlDestination":"http://i.imgur.com/OhbCQ0q.jpg",
+            "customerReference": "",
+            "summaryCode": "DEL",
+            "collectionDate": "17 Jul 2015",
+            "deliveryDueDate": "21 Jul 2015 23:59:00",
+            "signatory": "juan marco",
+            "deliveryTown": "Rome",
+            "destinationCountry": "Italy",
+            "originCountry": "China",
+            "originDepotCode": "BEJ",
+            "originDepotName": "Bejing",
+            "pieceQuantity": "1",
+            "statusData": []
+        }],
+        "duplicateConsignments": false
+    }
+  },
+  "shipment3": {
+    "tracker.output": {
+        "consignment": [{
+            "consignmentKey": "WW100100100VLC20150717220812",
+            "consignmentNumber": "100100100",
+            "imageUrlOrigin":"http://i.imgur.com/OhbCQ0q.jpg",
+            "imageUrlDestination":"http://i.imgur.com/OhbCQ0q.jpg",
+            "customerReference": "",
+            "summaryCode": "DEL",
+            "collectionDate": "17 Jul 2015",
+            "deliveryDueDate": "21 Jul 2015 23:59:00",
+            "signatory": "juan marco",
+            "deliveryTown": "San Francisco",
+            "destinationCountry": "USA",
+            "originCountry": "Austria",
+            "originDepotCode": "VIE",
+            "originDepotName": "Vienna",
+            "pieceQuantity": "1",
+            "statusData": []
+        }],
+        "duplicateConsignments": false
+    }
+  }
+}
