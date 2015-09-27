@@ -18,48 +18,32 @@
   {
   "consignmentKey": "WW100100100VLC20150717220811",
   "collectionDate": "14 Jul 2015",
-  "Country": "Singapore",
-  "DepotName": "Singapore",
+  "Country": "Russia",
+  "DepotName": "Moscow",
   "mode":"plane",
   "imageUrl":""
 },
   {
   "consignmentKey": "WW100100100VLC20150717220811",
   "collectionDate": "15 Jul 2015",
-  "Country": "Belgium",
-  "DepotName": "Liege",
-  "mode":"plane",
-  "imageUrl":""
-},
-  {
-  "consignmentKey": "WW100100100VLC20150717220811",
-  "collectionDate": "15 Jul 2015",
-  "Country": "Singapore",
-  "DepotName": "Singapore",
+  "Country": "Germany",
+  "DepotName": "Berlin",
   "mode":"plane",
   "imageUrl":""
 },
   {
   "consignmentKey": "WW100100100VLC20150717220812",
   "collectionDate": "15 Jul 2015",
-  "Country": "Belgium",
-  "DepotName": "Liege",
+  "Country": "France",
+  "DepotName": "Paris",
   "mode":"plane",
   "imageUrl":""
 },
   {
   "consignmentKey": "WW100100100VLC20150717220812",
   "collectionDate": "15 Jul 2015",
-  "Country": "Singapore",
-  "DepotName": "Singapore",
-  "mode":"plane",
-  "imageUrl":""
-},
-  {
-  "consignmentKey": "WW100100100VLC20150717220812",
-  "collectionDate": "15 Jul 2015",
-  "Country": "Belgium",
-  "DepotName": "Liege",
+  "Country": "USA",
+  "DepotName": "New York",
   "mode":"plane",
   "imageUrl":""
 },

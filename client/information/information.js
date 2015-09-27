@@ -2,7 +2,7 @@ Template.informationField.helpers({
   lastStation:function(){
     let lastStation = this.getCurrentStation();
     if (lastStation) {
-      return `${lastStation.DepotName}, ${lastStation.Country}`;      
+      return `${lastStation.DepotName}, ${lastStation.Country}`;
     }
   }
 });
@@ -10,7 +10,10 @@ Template.informationField.helpers({
 Template.information.events({
   'submit #consigSearch': function(e,t){
     e.preventDefault();
-
+    if ($('#consigKey').val() === "") {
+      Session.set('activePackage',null);
+      window.location = '/';
+    }
     if(FlowRouter.getRouteName() === "home") {
       FlowRouter.go('/package/:consigKey',{consigKey: $('#consigKey').val()});
     }

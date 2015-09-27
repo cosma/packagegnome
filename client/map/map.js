@@ -87,7 +87,8 @@ Template.map.initialisePackageJourney = function(){
     // Add the polyline to the map:
     PackageGnome.currentMarkers.addObject(polyline);
     // Zoom the map to make sure the whole polyline is visible:
-    PackageGnome.map.setViewBounds(polyline.getBounds());
+    PackageGnome.map.setZoom(3);
+    PackageGnome.map.setCenter(PackageGnome.Package.originLocation);
 
 
     // Add a weaker polyline for not yet passed stations
