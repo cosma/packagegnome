@@ -17,7 +17,7 @@ Template.map.onRendered(function(){
     );
 
     var ui = H.ui.UI.createDefault(PackageGnome.map, maptypes);
-
+    var mapEvents = new H.mapevents.MapEvents(PackageGnome.map);
     this.autorun(function(){
        PackageGnome.Package = PackageGnome.Packages.findOne({_id:Session.get('activePackage')});
        if (PackageGnome.Package) {
@@ -26,9 +26,6 @@ Template.map.onRendered(function(){
          }
          Template.map.initialisePackageJourney();
 
-         Meteor.setTimeout(() => {
-           PackageGnome.map.setZoom(PackageGnome.map.getZoom() - 1);
-         },10);
        }
     });
   },500);
@@ -38,7 +35,9 @@ Template.map.onRendered(function(){
 
 Template.map.initialisePackageJourney = function(){
     let logIt = function(evt){
-      console.log("Hey");
+      evt.preventDefault();
+      Session.set('imageUrl',evt.target.cj.imageUrl);
+      $('#myModal').modal();
     };
 
     PackageGnome.currentMarkers = new H.map.Group();
@@ -46,8 +45,8 @@ Template.map.initialisePackageJourney = function(){
     let iconOrigin = new H.map.Icon(PackageGnome.Package.imageUrlOriginTODO || 'http://googlemaps.googlermania.com/google_maps_api_v3/en/Google_Maps_Marker.png');
     let iconDestination = new H.map.Icon(PackageGnome.Package.imageUrlDestinationTODO || 'http://googlemaps.googlermania.com/google_maps_api_v3/en/Google_Maps_Marker.png');
     // Create a marker using the previously instantiated icon:
-    let origin = new H.map.Marker(PackageGnome.Package.originLocation);
-    let destination = new H.map.Marker(PackageGnome.Package.destinationLocation);
+    let origin = new H.map.Marker(PackageGnome.Package.originLocation,{data:{imageUrl:PackageGnome.Package.imageUrlOrigin}});
+    let destination = new H.map.Marker(PackageGnome.Package.destinationLocation,{data:{imageUrl:PackageGnome.Package.imageUrlDestination}});
     origin.addEventListener('tap',logIt);
 
     // Add the marker to the map:
@@ -65,8 +64,8 @@ Template.map.initialisePackageJourney = function(){
 
     stations.forEach(s => {
       points.push(s.location);
-      let iconStation = new H.map.Icon(s.imageUrl || 'http://i.imgur.com/RNiWxnS.png');
-      let marker = new H.map.Marker(s.location, { icon: iconStation });
+      let iconStation = new H.map.Icon(s.imageUrlASD || 'http://i.imgur.com/RNiWxnS.png');
+      let marker = new H.map.Marker(s.location, { icon: iconStation,data:s });
 
       marker.addEventListener('tap',logIt);
       PackageGnome.currentMarkers.addObject(marker);

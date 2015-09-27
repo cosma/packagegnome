@@ -3,6 +3,8 @@
     <div class="log-in" style="{{#if currentUser}}right:120px;{{else}}right:10px{{/if}}">
       {{> loginButtons align="right"}}
     </div>
+
+    {{#if currentUser.hasPackagesSaved}}
     <div class="saved-packages">
     <div class="saved-packages-packages">
       {{#each currentUser.profile.packages}}
@@ -15,7 +17,8 @@
       </div>
       {{/each}}
     </div>
-  </div>    
   </div>
+  {{/if}}
 
+  </div>
 </template>

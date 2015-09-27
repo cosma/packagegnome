@@ -12,7 +12,10 @@
 
     {{#with package}}
       {{> informationField}}
-      {{> chat}}
+
+      {{#if currentUser}}
+        {{> chat}}
+      {{/if}}
       {{> addToAccount}}
     {{/with}}
 
@@ -72,6 +75,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="content">
+            <span class="date">{{userEmail}}</span><br>
             <span class="date pull-right">{{roughMoment created}}</span><br>
             <span class="message">{{msg}}</span>
           </div>
