@@ -1,7 +1,9 @@
 Template.informationField.helpers({
   lastStation:function(){
     let lastStation = this.getCurrentStation();
-    return `${lastStation.DepotName}, ${lastStation.Country}`;
+    if (lastStation) {
+      return `${lastStation.DepotName}, ${lastStation.Country}`;      
+    }
   }
 });
 

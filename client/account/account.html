@@ -1,5 +1,21 @@
 <template name="account">
-  <div class="log-in" style="{{#if currentUser}}right:120px;{{else}}right:10px{{/if}}">
-    {{> loginButtons align="right"}}
+  <div class="account">
+    <div class="log-in" style="{{#if currentUser}}right:120px;{{else}}right:10px{{/if}}">
+      {{> loginButtons align="right"}}
+    </div>
+    <div class="saved-packages">
+    <div class="saved-packages-packages">
+      {{#each currentUser.profile.packages}}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="content">
+            <span class="message">{{.}}</span>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>    
   </div>
+
 </template>

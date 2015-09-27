@@ -14,12 +14,18 @@
   margin-top:2%;
 }
 
-.log-in {
+.account {
   position:absolute;
-  width: 100px;
-  height: 50px;
+  width: 20%;
+  height: 5%;
   z-index:100;
   margin-top:2%;
+  right:-10px;
+}
+
+.log-in {
+  width: 100px;
+  height: 50px;
 }
 
 .search-field {
@@ -100,4 +106,28 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+}
+
+.saved-packages {
+  width:85%;
+  min-height: 5vh;
+  max-height: 15vh;
+  margin-top:10px;
+  background-color: #D6E0EB;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.19);
+}
+
+.saved-packages-packages {
+  height:91%;
+  overflow-y:scroll;
+  overflow-x: hidden;
+}
+
+.saved-packages .content {
+  word-wrap: break-word;
+  padding:10px;
+  border-bottom:1px solid grey;
+  cursor:pointer;
 }

@@ -21,7 +21,14 @@ Template.map.onRendered(function(){
     this.autorun(function(){
        PackageGnome.Package = PackageGnome.Packages.findOne({_id:Session.get('activePackage')});
        if (PackageGnome.Package) {
+         if (PackageGnome.currentMarkers) {
+           PackageGnome.map.removeObject(PackageGnome.currentMarkers);
+         }
          Template.map.initialisePackageJourney();
+
+         Meteor.setTimeout(() => {
+           PackageGnome.map.setZoom(PackageGnome.map.getZoom() - 1);
+         },10);
        }
     });
   },500);
@@ -34,6 +41,8 @@ Template.map.initialisePackageJourney = function(){
       console.log("Hey");
     };
 
+    PackageGnome.currentMarkers = new H.map.Group();
+    PackageGnome.map.addObject(PackageGnome.currentMarkers);
     let iconOrigin = new H.map.Icon(PackageGnome.Package.imageUrlOriginTODO || 'http://googlemaps.googlermania.com/google_maps_api_v3/en/Google_Maps_Marker.png');
     let iconDestination = new H.map.Icon(PackageGnome.Package.imageUrlDestinationTODO || 'http://googlemaps.googlermania.com/google_maps_api_v3/en/Google_Maps_Marker.png');
     // Create a marker using the previously instantiated icon:
@@ -42,8 +51,8 @@ Template.map.initialisePackageJourney = function(){
     origin.addEventListener('tap',logIt);
 
     // Add the marker to the map:
-    PackageGnome.map.addObject(origin);
-    PackageGnome.map.addObject(destination);
+    PackageGnome.currentMarkers.addObject(origin);
+    PackageGnome.currentMarkers.addObject(destination);
 
     // Define points to represent the vertices of a short route in Berlin, Germany:
     var points = [
@@ -60,7 +69,7 @@ Template.map.initialisePackageJourney = function(){
       let marker = new H.map.Marker(s.location, { icon: iconStation });
 
       marker.addEventListener('tap',logIt);
-      PackageGnome.map.addObject(marker);
+      PackageGnome.currentMarkers.addObject(marker);
 
     });
 
@@ -77,8 +86,20 @@ Template.map.initialisePackageJourney = function(){
     var polyline = new H.map.Polyline(strip, { style: { lineWidth: 10,strokeColor:"#ff6600" }});
 
     // Add the polyline to the map:
-    PackageGnome.map.addObject(polyline);
-
+    PackageGnome.currentMarkers.addObject(polyline);
     // Zoom the map to make sure the whole polyline is visible:
     PackageGnome.map.setViewBounds(polyline.getBounds());
+
+
+    // Add a weaker polyline for not yet passed stations
+    var weakStrip = new H.geo.Strip();
+    let lastPoint = points[points.length - 1];
+    points = [];
+    points.push(lastPoint);
+    points.push(PackageGnome.Package.destinationLocation);
+    points.forEach(function(point) {
+      weakStrip.pushPoint(point);
+    });    polyline = new H.map.Polyline(weakStrip, { style: { lineWidth: 1,strokeColor:"#ff6600" }});
+    PackageGnome.currentMarkers.addObject(polyline);
+
 };
