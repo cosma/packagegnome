@@ -1,5 +1,5 @@
-{
-  "shipment1": {
+[
+  {
     "tracker.output": {
         "consignment": [{
             "consignmentKey": "WW100100100VLC20150717220810",
@@ -22,7 +22,7 @@
         "duplicateConsignments": false
     }
   },
-  "shipment2": {
+  {
     "tracker.output": {
         "consignment": [{
             "consignmentKey": "WW100100100VLC20150717220811",
@@ -45,7 +45,7 @@
         "duplicateConsignments": false
     }
   },
-  "shipment3": {
+  {
     "tracker.output": {
         "consignment": [{
             "consignmentKey": "WW100100100VLC20150717220812",
@@ -68,4 +68,4 @@
         "duplicateConsignments": false
     }
   }
-}
+]

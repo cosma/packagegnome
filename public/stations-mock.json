@@ -1,5 +1,5 @@
-{
-  "station1": {
+[
+  {
   "consignmentKey": "WW100100100VLC20150717220810",
   "collectionDate": "14 Jul 2015",
   "Country": "Singapore",
@@ -7,7 +7,7 @@
   "mode":"plane",
   "imageUrl":""
 },
-  "station2": {
+  {
   "consignmentKey": "WW100100100VLC20150717220810",
   "collectionDate": "15 Jul 2015",
   "Country": "Belgium",
@@ -15,7 +15,7 @@
   "mode":"plane",
   "imageUrl":""
 },
-  "station3": {
+  {
   "consignmentKey": "WW100100100VLC20150717220811",
   "collectionDate": "14 Jul 2015",
   "Country": "Singapore",
@@ -23,7 +23,7 @@
   "mode":"plane",
   "imageUrl":""
 },
-  "station4": {
+  {
   "consignmentKey": "WW100100100VLC20150717220811",
   "collectionDate": "15 Jul 2015",
   "Country": "Belgium",
@@ -31,7 +31,7 @@
   "mode":"plane",
   "imageUrl":""
 },
-  "station5": {
+  {
   "consignmentKey": "WW100100100VLC20150717220811",
   "collectionDate": "15 Jul 2015",
   "Country": "Singapore",
@@ -39,7 +39,7 @@
   "mode":"plane",
   "imageUrl":""
 },
-  "station6": {
+  {
   "consignmentKey": "WW100100100VLC20150717220812",
   "collectionDate": "15 Jul 2015",
   "Country": "Belgium",
@@ -47,7 +47,7 @@
   "mode":"plane",
   "imageUrl":""
 },
-  "station7": {
+  {
   "consignmentKey": "WW100100100VLC20150717220812",
   "collectionDate": "15 Jul 2015",
   "Country": "Singapore",
@@ -55,7 +55,7 @@
   "mode":"plane",
   "imageUrl":""
 },
-  "station8": {
+  {
   "consignmentKey": "WW100100100VLC20150717220812",
   "collectionDate": "15 Jul 2015",
   "Country": "Belgium",
@@ -63,4 +63,4 @@
   "mode":"plane",
   "imageUrl":""
 },
-}
+]
